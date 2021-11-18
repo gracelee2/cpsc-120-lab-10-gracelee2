@@ -45,6 +45,7 @@ std::string Person::phone_number() const {
 /// can be chained together.
 Person& Person::set_phone_number(const std::string& phone_number) {
   phone_number_ = phone_number;
+  return *this;
   // TODO: Implement the mutator (also known as a setter) for the phone_number_
   // data member.
 }
@@ -84,7 +85,7 @@ bool Person::operator!=(const Person& person) const {
 /// \param person The operand to the right hand side of <
 /// \returns true when *this.name() < person.name()
 bool Person::operator<(const Person& person) const {
-  return name_ < person.name();
+return name_ < person.name();
   // TODO: Implement a less than boolean operator which returns true when this
   // has a name that alphabetically comes before the name assciated with the
   // parameter person.
