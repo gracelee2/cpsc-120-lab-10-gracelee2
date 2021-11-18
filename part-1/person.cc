@@ -1,4 +1,13 @@
-
+// Grace Lee
+// CPSC 120-01
+// 2021-10-28
+// grace1@csu.fullerton.edu
+// @gracelee2
+//
+// Lab 08-01
+//
+// This program adds adresses to a person
+//
 #include "person.h"
 
 /// Person is a constructor which initializes a Person object
@@ -7,6 +16,8 @@
 /// \param phone_number A string which represents a telephone number like
 /// "657-278-3700"
 Person::Person(std::string name, std::string phone_number) {
+  name_ = name;
+  phone_number_ = phone_number;
   // TODO: Implement the constructor. If you can't remember the names
   // of the data members look in the associated header file, person.h
 }
@@ -14,6 +25,7 @@ Person::Person(std::string name, std::string phone_number) {
 /// The name of the person
 /// \returns the name of the person
 std::string Person::name() const {
+  return name_;
   // TODO: Implement the accessor (also known as a getter) for the name_ data
   // member.
 }
@@ -21,6 +33,7 @@ std::string Person::name() const {
 /// The phone_number of the person
 /// \returns the phone_number of the person
 std::string Person::phone_number() const {
+  return phone_number_;
   // TODO: Implement the accessor (also known as a getter) for the phone_number_
   // data member.
 }
@@ -31,6 +44,7 @@ std::string Person::phone_number() const {
 /// \remark The method returns the object itself so multiple methods
 /// can be chained together.
 Person& Person::set_phone_number(const std::string& phone_number) {
+  phone_number_ = phone_number;
   // TODO: Implement the mutator (also known as a setter) for the phone_number_
   // data member.
 }
@@ -44,6 +58,8 @@ std::ostream& Person::write(std::ostream& out) const {
   // TODO: Implement the write member function which sends to the out parameter
   // the name and the phone number with a space between the two data members.
   // Don't forget to return out.
+  out << name_ << phone_number_ <<"\n";
+  return out;
 }
 
 /// Boolean equals opertor overload
@@ -51,6 +67,7 @@ std::ostream& Person::write(std::ostream& out) const {
 /// \returns true when *this and person have the same name and phone
 /// number.
 bool Person::operator==(const Person& person) const {
+  return (*this == person);
   // TODO: Implement an is equal to boolean operator which returns true when
   // this has the same name and phone number as the parameter person.
 }
@@ -67,6 +84,7 @@ bool Person::operator!=(const Person& person) const {
 /// \param person The operand to the right hand side of <
 /// \returns true when *this.name() < person.name()
 bool Person::operator<(const Person& person) const {
+  return name_ < person.name();
   // TODO: Implement a less than boolean operator which returns true when this
   // has a name that alphabetically comes before the name assciated with the
   // parameter person.
@@ -76,6 +94,7 @@ bool Person::operator<(const Person& person) const {
 /// \param person The operand to the right hand side of >
 /// \returns true when *this.name() > person.name()
 bool Person::operator>(const Person& person) const {
+  return name_ > person.name();
   // TODO: Implement a greater than boolean operator which returns true when
   // this has a name that alphabetically comes after the name assciated with the
   // parameter person.
