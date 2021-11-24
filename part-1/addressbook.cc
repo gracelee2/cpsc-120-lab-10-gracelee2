@@ -34,8 +34,9 @@ int main(int argc, char* argv[]) {
     // TODO: Declare a string variable named `name` to store the person's name.
     // TODO: Using getline(), read from cin and store into `name`; read up to
     // '\n'.
-    string name = "";
+
     cout << "Please enter a full name: " << "";
+    string name = "";
     cin >> name;
     getline(cin, name);
 
@@ -45,8 +46,9 @@ int main(int argc, char* argv[]) {
     // the person's phone number.
     // TODO: Using getline(), read from cin and store into `phone_number`;
     // read up to '\n'.
-    string phone_number = "";
+
     cout << "Please enter a phone number: " << "";
+    string phone_number = "";
     cin >> phone_number;
     getline(cin, phone_number);
 
@@ -65,13 +67,15 @@ int main(int argc, char* argv[]) {
   // https://en.cppreference.com/w/cpp/algorithm/sort
 
   cout << "Great! Let's print out all the enteries in your addressbook.\n";
-  auto args = vector<string>(argv, argv + argc);
-  for(const auto& item : args){
-	cout << item << "\n";
+  //auto args = vector<string>(argv, argv + argc);
+  for(const auto& address : addressbook){
+	cout << address << "\n";
   // TODO: Using a range-for loop, print out each entry of the addressbook.
   // Remember to use the overloaded << operator to output the person to
   // cout.
 
-  return 0;
 }
+cout << "\n";
+
+return 0;
 }
